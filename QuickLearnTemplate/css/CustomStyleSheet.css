@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*#tabs {
+	background-color: #0000FF;
+}
+
+#tab-content {
+	background-color: #0000ff;
+	border-color: #0000ff;
+}*/
+
+.ui-widget-content {
+    border: 1px solid #693;
+    background: #693;
+}
+
+.ui-widget-header {
+    /*background: url("images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;*/
+    border: 1px solid #4297D7;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+a.mover {
+    background: none repeat scroll 0 0 #360;
+}
+
+a.mover-disabled {
+    background: none repeat scroll 0 0 #aaa;
+}
+
+body {
+    text-shadow: 0 0 0 #000000;
+}
