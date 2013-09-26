@@ -3,14 +3,11 @@ xapi_design_world_of_xapicraft
 
 ## Team World of xAPICraft ##
 
-1. Ali	Shahrazad (AS)
-2. Jason	Smalley (JS)
-3. Maribel	Nabong-Davis (MND)
-4. Dave	Smith (DS)
-5. Ellen	Meiselman (EM)
-6. Erick	Emde (EE)
-7. Milan	Hatch (MH)
-8. Violeta	Gabriela (VG)
+1. Ali Shahrazad (AS)
+2. Maribel Nabong-Davis (MND)
+3. Dave Smith (DS)
+4. Ellen Meiselman (EM)
+5. Erick Emde (EE)
 
 # Use Case #
 ## Use Case Name: ##
