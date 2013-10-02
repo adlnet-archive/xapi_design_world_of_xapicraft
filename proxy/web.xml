@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>StatementSender</servlet-name>
+        <servlet-class>com.brindlewaye.xapi.servlet.StatementSenderServlet</servlet-class>
+        <init-param>
+            <param-name>endpoint</param-name>
+            <param-value>https://cloud.scorm.com/tc/F09K9QB8JB/</param-value>
+        </init-param>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>F09K9QB8JB</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>95xI7i7u4T0CWIiCQ5hyQVxdfscBgmZVQuJvYXPx</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatementSender</servlet-name>
+        <url-pattern>/save.do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
