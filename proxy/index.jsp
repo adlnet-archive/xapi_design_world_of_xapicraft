@@ -100,7 +100,7 @@
     <body>
   <% String retrieveData= (String)request.getAttribute("jsonString"); %>
       
-  <form  action="save.do" method="post">
+  <form  action="StatementSenderServlet" method="post">
   <table width="745" height="536" border="0" align="center">
   <tr>
       <td width="145" height="339"> <u>JSON Statement</u>  </td>
@@ -110,7 +110,6 @@
     <td height="20">&nbsp;</td>
     <td align="center"><input type="Submit" onClick="return validateJSON(1)" name="postjson" value="Validate & Post JSON" /></td>
   </tr>
- 
   <tr>
       <td height="163"><u>Result</u>  </td>
     <% //System.out.println(retrieveData); %>
