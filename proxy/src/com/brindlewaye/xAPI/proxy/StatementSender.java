@@ -1,7 +1,9 @@
+package com.brindlewaye.xAPI.proxy;
+
 /**
  * 
  */
-package com.brindlewaye.xAPI.proxy;
+
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -82,22 +84,35 @@ public class StatementSender {
 		Statement stmt = null;
 		UUID uuid = null;
 
-		try {
+		try 
+                {
 			if (remote == null) initialize();
-		} catch (IOException e) {
+		} 
+                catch (IOException e) 
+                {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return uuid;
 		}
-		try {
+                
+		try 
+                {
 			stmt = new Statement(stringOfJSON);
 			stmt.setVersion(TCAPIVersion.V100);
 			stmt.setId(id);
-		} catch (IOException | URISyntaxException e) {
+		} 
+                catch (IOException e)
+                {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return uuid;
 		}
+                catch ( URISyntaxException e)
+                {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return uuid;                    
+                }
 		
 		if (remote == null) return null;
 		
@@ -120,6 +135,17 @@ public class StatementSender {
 		remote.setVersion(TCAPIVersion.V100);
 		return remote;
 	}
+        
+        public RemoteLRS initializeFromClasspath() throws IOException {
+		remote = new RemoteLRS();
+		LoadConfigFromClasspath();
+		remote.setEndpoint(config.getProperty("endpoint"));
+		remote.setUsername(config.getProperty("username"));
+		remote.setPassword(config.getProperty("password"));
+		remote.setVersion(TCAPIVersion.V100);
+		return remote;
+	}
+        
 	
 	public void sendTestStatement() {
 		try {
@@ -145,5 +171,13 @@ public class StatementSender {
 		InputStream is = new FileInputStream(props);
         config.load(is);
         is.close();
+	}
+       
+// file is picked from classpath, i.e in classes folder, or any other directory which lies in classpath.
+        private void LoadConfigFromClasspath() throws IOException 
+        {
+                InputStream is = this.getClass().getClassLoader().getResourceAsStream("lrs.properties");
+                config.load(is);
+                is.close();
 	}
 }
